@@ -3,9 +3,7 @@ package br.com.gigio.generictypeconverter.enums;
 import java.util.HashMap;
 import java.util.Map;
 import javax.xml.transform.stream.StreamSource;
-
 import org.w3c.dom.Document;
-
 import br.com.gigio.generictypeconverter.implementations.DocumentStreamSourceConverter;
 import br.com.gigio.generictypeconverter.implementations.DocumentStringConverter;
 import br.com.gigio.generictypeconverter.interfaces.Converter;
@@ -27,9 +25,7 @@ public enum ConverterFactory {
 
 	@SuppressWarnings("unchecked")
 	public <F, T> Converter<F, T> getConverter(Class<F> fromType, Class<T> toType) {
-		Converter<F, T> result = null;
-		result = (Converter<F, T>) converters.get(new Key(fromType, toType));
-		return result;
+		return (Converter<F, T>) converters.get(new Key(fromType, toType));
 	}
 
 	private class Key {

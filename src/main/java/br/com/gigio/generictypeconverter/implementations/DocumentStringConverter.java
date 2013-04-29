@@ -12,6 +12,12 @@ import br.com.gigio.generictypeconverter.interfaces.Converter;
 
 public class DocumentStringConverter implements Converter<Document, String> {
 
+	private String name;
+	
+	public DocumentStringConverter(){
+		this.name = DocumentStringConverter.class.getSimpleName();
+	}
+
 	public String convert(Document aDocument) {
 		String result = null;
 
@@ -30,6 +36,10 @@ public class DocumentStringConverter implements Converter<Document, String> {
 		}
 
 		return result;
+	}
+
+	public String getName() {
+		return this.name;
 	}
 
 }

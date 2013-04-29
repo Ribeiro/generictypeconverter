@@ -15,8 +15,10 @@ import br.com.gigio.generictypeconverter.interfaces.Converter;
 public class Main {
 	
 	public static void main(String[] args) {
-//		ConverterFactory converterFactory = ConverterFactory.getInstance ( );  
-//		Converter<org.w3c.dom.Document, StreamSource> converter = converterFactory.getConverter (org.w3c.dom.Document.class, StreamSource.class);
+		ConverterFactory converterFactory = ConverterFactory.getInstance ( );  
+		Converter<Document, StreamSource> converterOne = converterFactory.getConverter (Document.class, StreamSource.class);
+		Converter<Document, String> converterTwo = converterFactory.getConverter (Document.class, String.class);
+		
 //		StreamSource document = null;
 //		try {
 //			document = converter.convert(loadXMLFrom("files/input/xml-payload.xml"));
@@ -24,7 +26,9 @@ public class Main {
 //			// TODO Auto-generated catch block
 //			e.printStackTrace();
 //		}
-//		System.out.println(converter);
+		
+		System.out.println("Converter - One => " + converterOne.getName());
+		System.out.println("Converter - Two => " + converterTwo.getName());
 		
 		
 	}
