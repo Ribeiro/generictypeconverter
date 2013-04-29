@@ -1,8 +1,7 @@
 package br.com.gigio.generictypeconverter.implementations;
 
-import javax.swing.text.Document;
 import javax.xml.transform.stream.StreamSource;
-
+import org.w3c.dom.Document;
 import br.com.gigio.generictypeconverter.interfaces.Converter;
 
 public class DocumentStreamSourceConverter implements Converter<Document, StreamSource> {

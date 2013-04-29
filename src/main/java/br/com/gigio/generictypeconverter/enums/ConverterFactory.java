@@ -2,8 +2,10 @@ package br.com.gigio.generictypeconverter.enums;
 
 import java.util.HashMap;
 import java.util.Map;
-import javax.swing.text.Document;
 import javax.xml.transform.stream.StreamSource;
+
+import org.w3c.dom.Document;
+
 import br.com.gigio.generictypeconverter.implementations.DocumentStreamSourceConverter;
 import br.com.gigio.generictypeconverter.implementations.DocumentStringConverter;
 import br.com.gigio.generictypeconverter.interfaces.Converter;

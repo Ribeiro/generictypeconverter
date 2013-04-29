@@ -1,7 +1,13 @@
 package br.com.gigio.generictypeconverter.main;
 
-import javax.swing.text.Document;
+import java.io.StringReader;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.transform.stream.StreamSource;
+
+import org.w3c.dom.Document;
+import org.xml.sax.InputSource;
 
 import br.com.gigio.generictypeconverter.enums.ConverterFactory;
 import br.com.gigio.generictypeconverter.interfaces.Converter;
@@ -9,9 +15,28 @@ import br.com.gigio.generictypeconverter.interfaces.Converter;
 public class Main {
 	
 	public static void main(String[] args) {
-		ConverterFactory converterFactory = ConverterFactory.getInstance ( );  
-		Converter < Document, StreamSource > converter = converterFactory.getConverter (Document.class, StreamSource.class);
-		System.out.println(converter);
+//		ConverterFactory converterFactory = ConverterFactory.getInstance ( );  
+//		Converter<org.w3c.dom.Document, StreamSource> converter = converterFactory.getConverter (org.w3c.dom.Document.class, StreamSource.class);
+//		StreamSource document = null;
+//		try {
+//			document = converter.convert(loadXMLFrom("files/input/xml-payload.xml"));
+//		} catch (Exception e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//		System.out.println(converter);
+		
+		
 	}
+	
+	public static Document loadXMLFrom(String xml) throws Exception {
+    	InputSource is= new InputSource(new StringReader(xml));
+    	DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+    	factory.setNamespaceAware(true);
+    	DocumentBuilder builder = null;
+    	builder = factory.newDocumentBuilder();
+    	Document doc = builder.parse(is);
+    	return doc;
+    }
 
 }
